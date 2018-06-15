@@ -98,7 +98,6 @@ Send email using a template to one or more recipients.
    + Attributes (Send Email Request)
 
 + Response 200 (application/json)
-This indicates an email has been successfully sent to all the given recipients.
 
    + Body
 
@@ -114,4 +113,38 @@ This indicates an email cannot be delivered to at least one of the given recipie
             {
                "Error in sending email!"
             }
+
+# Data Structure
+
+### Send Sms Request (object)
++ phone: `1234567890` (string, required) - The phone number want to send to
++ data (array[string], required) - The data to fill in the placeholder according to template requirement
+
+# Group Sms Service
+
+## Send Email with Template [/email/{id}]
+Currently, we have 1 template, which are:
+
+id | name | data
+---|---|---
+1|Appointment Notification| CustomerName, ServiceName, Time, StoreAddress
+
++ Parameters
+
+    + id: 1 (number, required) - The template id
+
+### Send Sms [POST]
+Send Sms to one recipient.
+
++ Request (application/json)
+
+   + Attributes (Send Sms Request )
+
++ Response 201 (application/json)
+   + Body
+
++ Response 404
+Indicates the template id not found
+
+    + Body
 
