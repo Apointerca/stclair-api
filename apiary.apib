@@ -67,24 +67,17 @@ Usually happens when creating a resource that already exists.
 ## Send Email Using A Template [/email/{id}]
 Currently, we have 7 different templates, which are:
 
-+ new registration
-    - id = 1
-    - Injectable variables:
-        * firstName (string, required)
-        * lastName (string, required)
-        * activationLink (string, required) - New account activation link
-+ reset password
-    - id = 2
-+ business account ready
-    - id = 3
-+ new store ready
-    - id = 4
-+ appointment confirmation
-    - id = 5
-+ Activation link expired send new activation link
-    - id = 6
-+ Reset password
-    - id = 7
+
+id | name | Injectable Variable
+---|---|---
+1|New registration| firstName, lastName, activationLink
+2|reset password|
+3|business account ready|
+4|new store ready|
+5|appointment confirmation|
+6|Activation link expired send new activation link|
+7|Reset password|
+8|Confirm Appointment|storeName
 
 + Parameters
 
@@ -138,7 +131,7 @@ Send Sms to one recipient.
 
 + Request (application/json)
 
-   + Attributes (Send Sms Request )
+   + Attributes (Send Sms Request)
 
 + Response 201 (application/json)
    + Body
